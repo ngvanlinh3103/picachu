@@ -77,7 +77,7 @@ function openImage(val, pos) {
     //console.log('check win:' + checkWin());
     setTimeout(function () {
         if (checkWin(check)) {
-            if (confirm('Chúc mừng win rồi thời gian:'+document.getElementById('seconds').innerText+':'+document.getElementById('tens').innerText+'ms. Bạn muốn chơi lai ko?')) {
+            if (confirm('Chúc mừng win rồi thời gian: '+document.getElementById('seconds').innerText+':'+document.getElementById('tens').innerText+'ms. Bạn muốn chơi lai ko?')) {
                 location.reload();
             }
         }
@@ -114,7 +114,6 @@ window.onload = function () {
     var btn_start = document.getElementById('start');
     var interval;
     interval = setInterval(start, 10);
-
     function start() {
         ten++;
         if (ten <= 9) {
