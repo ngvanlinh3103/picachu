@@ -1,4 +1,7 @@
-var n = prompt("Số cặp hình bạn muốn:");
+var n = prompt("Số cặp hình bạn muốn từ 1 đến 16:");
+if (n < 1 || n > 16) {
+    n = prompt('nhập lại đi bạn:');
+}
 var list_items = document.getElementsByClassName('list-item');
 var html_items = "";
 var ran_id = random(n);
@@ -74,11 +77,11 @@ function openImage(val, pos) {
     //console.log('check win:' + checkWin());
     setTimeout(function () {
         if (checkWin(check)) {
-            if (confirm('Chúc mừng win rồi bạn muốn chơi lai ko?')) {
+            if (confirm('Chúc mừng win rồi thời gian:'+document.getElementById('seconds').innerText+':'+document.getElementById('tens').innerText+'ms. Bạn muốn chơi lai ko?')) {
                 location.reload();
             }
         }
-    }, 500)
+    }, 200)
 }
 
 //check win
@@ -100,4 +103,34 @@ function random(x) {
     ran = ran.sort(() => Math.random() - 0.5);
     //console.log('random:' + ran);
     return ran;
+}
+
+//time
+window.onload = function () {
+    var second = 0;
+    var ten = 0;
+    var appendTens = document.getElementById('tens');
+    var appendSeconds = document.getElementById('seconds');
+    var btn_start = document.getElementById('start');
+    var interval;
+    interval = setInterval(start, 10);
+
+    function start() {
+        ten++;
+        if (ten <= 9) {
+            appendTens.innerHTML = "0" + ten;
+        }
+        if (ten > 9) {
+            appendTens.innerHTML = ten;
+        }
+        if (ten > 99) {
+            second++;
+            appendSeconds.innerHTML = "0" + second;
+            ten = 0;
+            appendTens.innerHTML = "0" + 0;
+        }
+        if (second > 9) {
+            appendSeconds.innerHTML = second;
+        }
+    }
 }
