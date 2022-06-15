@@ -5,7 +5,7 @@ if (n < 1 || n > 16) {
 var list_items = document.getElementsByClassName('list-item');
 var html_items = "";
 var ran_id = random(n);
-console.log(ran_id);
+//console.log(ran_id);
 
 //tao item
 for (let i = 0; i < (n * 2); i++) {
