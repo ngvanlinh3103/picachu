@@ -1,7 +1,6 @@
-var n = prompt("Số cặp hình bạn muốn từ 1 đến 16:");
-if (n < 1 || n > 16) {
-    n = prompt('nhập lại đi bạn:');
-}
+do{
+    var n = prompt("Số cặp hình bạn muốn từ 1 đến 20:");
+}while (n < 1 || n > 20)
 var list_items = document.getElementsByClassName('list-item');
 var html_items = "";
 var ran_id = random(n);
