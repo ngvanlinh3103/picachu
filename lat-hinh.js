@@ -35,7 +35,6 @@ function openImage(val, pos) {
         val_2 = val;
         pos_2 = pos;
     }
-
     if (val_1 == val_2) {
         check = true;
         //console.log(check);
